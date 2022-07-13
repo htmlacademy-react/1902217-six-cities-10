@@ -8,7 +8,7 @@ type PlaceCountProps = {
 function Main({ placeCount }: PlaceCountProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
-      <Header />.
+      <Header />
 
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
