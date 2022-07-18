@@ -1,5 +1,6 @@
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import { AppRoute, AuthorizationStatus } from '../../const';
+import { Offer } from '../../types/offer';
 import Main from '../../pages/main.tsx/main';
 import Login from '../../pages/login/login';
 import Favorites from '../../pages/favorites/favorites';
@@ -8,17 +9,18 @@ import NotFoundScreen from '../../pages/not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
 
 
-type AppPlaceCountProps = {
+type AppScreenProps = {
   placeCount: number;
+  offers: Offer[]
 }
 
-function App({ placeCount }: AppPlaceCountProps): JSX.Element {
+export default function App({ placeCount, offers }: AppScreenProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path={AppRoute.Main}
-          element={<Main placeCount={placeCount} />}
+          element={<Main placeCount={placeCount} offers={offers} />}
         />
         <Route
           path={AppRoute.Login}
@@ -27,8 +29,8 @@ function App({ placeCount }: AppPlaceCountProps): JSX.Element {
         <Route
           path={AppRoute.Favorites}
           element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-              <Favorites />
+            <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
+              <Favorites offers={offers} />
             </ PrivateRoute>
           }
         />
@@ -45,4 +47,3 @@ function App({ placeCount }: AppPlaceCountProps): JSX.Element {
   );
 }
 
-export default App;
