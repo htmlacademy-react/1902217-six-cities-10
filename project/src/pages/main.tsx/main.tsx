@@ -1,11 +1,16 @@
-import PlaceCard from '../../components/place-card/place-card';
+import { PlaceCardClassName } from '../../const';
+import PlaceCardList from '../../components/place-card-list/place-card-list';
 import Header from '../../components/header/header';
+import { Offer } from '../../types/offer';
+import { Link } from 'react-router-dom';
 
-type PlaceCountProps = {
+type MainScreenProps = {
   placeCount: number;
+  offers: Offer[]
 }
 
-function Main({ placeCount }: PlaceCountProps): JSX.Element {
+export default function Main({ placeCount, offers }: MainScreenProps): JSX.Element {
+
   return (
     <div className="page page--gray page--main">
       <Header />
@@ -16,34 +21,34 @@ function Main({ placeCount }: PlaceCountProps): JSX.Element {
           <section className="locations container">
             <ul className="locations__list tabs__list">
               <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
+                <Link className="locations__item-link tabs__item" to="#todo">
                   <span>Paris</span>
-                </a>
+                </Link>
               </li>
               <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
+                <Link className="locations__item-link tabs__item" to="#todo">
                   <span>Cologne</span>
-                </a>
+                </Link>
               </li>
               <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
+                <Link className="locations__item-link tabs__item" to="#todo">
                   <span>Brussels</span>
-                </a>
+                </Link>
               </li>
               <li className="locations__item">
-                <a className="locations__item-link tabs__item tabs__item--active">
+                <Link className="locations__item-link tabs__item tabs__item--active" to="#todo">
                   <span>Amsterdam</span>
-                </a>
+                </Link>
               </li>
               <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
+                <Link className="locations__item-link tabs__item" to="#todo">
                   <span>Hamburg</span>
-                </a>
+                </Link>
               </li>
               <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
+                <Link className="locations__item-link tabs__item" to="#todo">
                   <span>Dusseldorf</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </section>
@@ -69,11 +74,7 @@ function Main({ placeCount }: PlaceCountProps): JSX.Element {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
+                <PlaceCardList offers={offers} placeCardClassName={PlaceCardClassName.Main} />
               </div>
             </section>
             <div className="cities__right-section">
@@ -85,5 +86,3 @@ function Main({ placeCount }: PlaceCountProps): JSX.Element {
     </div>
   );
 }
-
-export default Main;

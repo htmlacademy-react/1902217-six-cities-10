@@ -12,4 +12,18 @@ enum AuthorizationStatus {
   Unknown = 'UNKNOWN',
 }
 
-export { AppRoute, AuthorizationStatus };
+enum PlaceCardClassName {
+  Main = 'cities',
+  Favorite = 'favorites'
+}
+
+enum CityType {
+  Paris = 'Paris',
+  Cologne = 'Cologne',
+  Brussels = 'Brussels',
+  Amsterdam = 'Amsterdam',
+  Hamburg = 'Hamburg',
+  Dusseldorf = 'Dusseldorf'
+}
+
+export { AppRoute, AuthorizationStatus, PlaceCardClassName, CityType };
