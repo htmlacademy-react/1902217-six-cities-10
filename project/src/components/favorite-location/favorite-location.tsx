@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import PlaceCardList from '../place-card-list/place-card-list';
+import PlacesCardList from '../places-card-list/places-card-list';
 import { AppRoute } from '../../const';
 import { Offer } from '../../types/offer';
 import { PlaceCardClassName } from '../../const';
@@ -20,7 +20,7 @@ export default function FavoriteLocation({ offers, city }: FavoriteLocationScree
         </div>
       </div>
       <div className="favorites__places">
-        <PlaceCardList offers={offers} placeCardClassName={PlaceCardClassName.Favorite} />
+        {/* <PlacesCardList offers={offers} placeCardClassName={PlaceCardClassName.Favorite} /> */}
       </div>
     </li>
   );
