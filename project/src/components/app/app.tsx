@@ -1,5 +1,5 @@
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import { AppRoute, AuthorizationStatus } from '../../const';
+import { AppRoute, AuthorizationStatus } from '../../const/enums';
 import { Offer } from '../../types/offer';
 import Main from '../../pages/main.tsx/main';
 import Login from '../../pages/login/login';

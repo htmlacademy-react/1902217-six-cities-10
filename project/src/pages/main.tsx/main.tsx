@@ -1,8 +1,8 @@
-import { PlaceCardClassName } from '../../const';
+import { PlaceCardClassName } from '../../const/enums';
 import PlacesCardList from '../../components/places-card-list/places-card-list';
 import Header from '../../components/header/header';
 import Map from '../../components/map/map';
-import { CityType } from '../../const';
+import { CityType } from '../../const/enums';
 import { Offer } from '../../types/offer';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -13,11 +13,9 @@ type MainScreenProps = {
 }
 
 export default function Main({ placeCount, offers }: MainScreenProps): JSX.Element {
-  const [selectedCardId, setSelectedCardId] = useState<number>(0);
-  console.log(selectedCardId);
-  const getSelectedCardId = (id: number): void => {
-    setSelectedCardId(id);
-    console.log(selectedCardId);
+  const [activeCard, setActiveCard] = useState<Offer | undefined>(undefined);
+  const getActiveCard = (offer: Offer): void => {
+    setActiveCard(offer);
   };
 
   const sortedByCityOffers = {
@@ -92,11 +90,11 @@ export default function Main({ placeCount, offers }: MainScreenProps): JSX.Eleme
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <PlacesCardList offers={offers} placeCardClassName={PlaceCardClassName.Main} getSelectedCardId={getSelectedCardId} />
+                <PlacesCardList offers={offers} placeCardClassName={PlaceCardClassName.Main} getActiveCard={getActiveCard} />
               </div>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map"><Map offers={sortedByCityOffers.AMSTERDAM} /></section>
+              <section className="cities__map map"><Map offers={sortedByCityOffers.AMSTERDAM} activeCard={activeCard} /></section>
             </div>
           </div>
         </div>

@@ -1,15 +1,15 @@
 import { Offer } from '../../types/offer';
-import { PlaceCardClassName, AppRoute } from '../../const';
+import { PlaceCardClassName, AppRoute } from '../../const/enums';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 type PlaceCardScreenProps = {
   offer: Offer
-  getSelectedCardId: (id: number) => void
+  getActiveCard: (offer: Offer) => void
   placeCardClassName: string
 }
 
-export default function PlaceCard({ offer, getSelectedCardId, placeCardClassName }: PlaceCardScreenProps): JSX.Element {
+export default function PlaceCard({ offer, getActiveCard, placeCardClassName }: PlaceCardScreenProps): JSX.Element {
   const { id, title, isPremium, isFavorite, previewImage, price, type } = offer;
   const [buttonState, setButtonState] = useState(isFavorite);
 
@@ -18,8 +18,15 @@ export default function PlaceCard({ offer, getSelectedCardId, placeCardClassName
   };
 
   return (
-    <article id={String(id)} className={`${placeCardClassName}__card place-card`} onMouseOver={() => getSelectedCardId(id)}>
-      {isPremium && <div className="place-card__mark"><span>Premium</span></div>}
+    <article
+      id={String(id)}
+      className={`${placeCardClassName}__card place-card`}
+      onMouseOver={() => getActiveCard(offer)}
+    >
+      {
+        isPremium &&
+        <div className="place-card__mark"><span>Premium</span></div>
+      }
       <div className={`${placeCardClassName}__image-wrapper place-card__image-wrapper`}>
         <Link to={AppRoute.Room}>
           <img className="place-card__image" src={previewImage} width={placeCardClassName === PlaceCardClassName.Main ? '260' : '150'} height={placeCardClassName === PlaceCardClassName.Main ? '200' : '110'} alt="Place" />

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import PlacesCardList from '../places-card-list/places-card-list';
-import { AppRoute } from '../../const';
+import { AppRoute } from '../../const/enums';
 import { Offer } from '../../types/offer';
-import { PlaceCardClassName } from '../../const';
+import { PlaceCardClassName } from '../../const/enums';
 
 type FavoriteLocationScreenProps = {
   offers: Offer[]

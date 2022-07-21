@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
 import { offers } from './mocks/offers';
@@ -12,10 +11,8 @@ const Setting = {
 };
 
 root.render(
-  <React.StrictMode>
-    <App
-      placeCount={Setting.PLACE_COUNT}
-      offers={offers}
-    />
-  </React.StrictMode>,
+  <App
+    placeCount={Setting.PLACE_COUNT}
+    offers={offers}
+  />
 );
