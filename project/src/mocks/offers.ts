@@ -3,11 +3,11 @@ import { Offer } from '../types/offer';
 export const offers: Offer[] = [
   {
     city: {
-      name: 'Dusseldorf',
+      name: 'Amsterdam',
       location: {
-        latitude: 51.225402,
-        longitude: 6.776314,
-        zoom: 13
+        latitude: 52.370216,
+        longitude: 4.895168,
+        zoom: 12
       }
     },
     previewImage: 'https://10.react.pages.academy/static/hotel/18.jpg',
@@ -29,7 +29,7 @@ export const offers: Offer[] = [
     ],
     title: 'Penthouse, 4-5 rooms + 5 balconies',
     isFavorite: true,
-    isPremium: false,
+    isPremium: true,
     rating: 4.1,
     type: 'hotel',
 
@@ -50,19 +50,19 @@ export const offers: Offer[] = [
     },
     description: 'Peaceful studio in the most wanted area in town. Quiet house Near of everything. Completely renovated. Lovely neighbourhood, lot of trendy shops, restaurants and bars in a walking distance.',
     location: {
-      latitude: 51.210402,
-      longitude: 6.798314,
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
       zoom: 16
     },
     id: 1
   },
   {
     city: {
-      name: 'Paris',
+      name: 'Amsterdam',
       location: {
-        latitude: 48.85661,
-        longitude: 2.351499,
-        zoom: 13
+        latitude: 52.370216,
+        longitude: 4.895168,
+        zoom: 12
       }
     },
     previewImage: 'https://10.react.pages.academy/static/hotel/19.jpg',
@@ -84,7 +84,7 @@ export const offers: Offer[] = [
     ],
     title: 'Nice, cozy, warm big bed apartment',
     isFavorite: false,
-    isPremium: false,
+    isPremium: true,
     rating: 3.3,
     type: 'house',
 
@@ -103,19 +103,19 @@ export const offers: Offer[] = [
     },
     description: 'Relax, rejuvenate and unplug in this ultimate rustic getaway experience in the country. In our beautiful screened Pondhouse, you can gaze at the stars and listen to the sounds of nature from your cozy warm bed.',
     location: {
-      latitude: 48.843610000000005,
-      longitude: 2.338499,
+      latitude: 52.369553943508,
+      longitude: 4.85309666406198,
       zoom: 16
     },
     id: 2
   },
   {
     city: {
-      name: 'Hamburg',
+      name: 'Amsterdam',
       location: {
-        latitude: 53.550341,
-        longitude: 10.000654,
-        zoom: 13
+        latitude: 52.370216,
+        longitude: 4.895168,
+        zoom: 12
       }
     },
     previewImage: 'https://10.react.pages.academy/static/hotel/6.jpg',
@@ -162,19 +162,19 @@ export const offers: Offer[] = [
     },
     description: 'Discover daily local life in city center, friendly neighborhood, clandestine casino, karaoke, old-style artisans, art gallery and artist studio downstairs.',
     location: {
-      latitude: 53.534341000000005,
-      longitude: 9.998654,
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
       zoom: 16
     },
     id: 3
   },
   {
     city: {
-      name: 'Cologne',
+      name: 'Amsterdam',
       location: {
-        latitude: 50.938361,
-        longitude: 6.959974,
-        zoom: 13
+        latitude: 52.370216,
+        longitude: 4.895168,
+        zoom: 12
       }
     },
     previewImage: 'https://10.react.pages.academy/static/hotel/4.jpg',
@@ -196,7 +196,7 @@ export const offers: Offer[] = [
     ],
     title: 'Loft Studio in the Central Area',
     isFavorite: true,
-    isPremium: false,
+    isPremium: true,
     rating: 3.7,
     type: 'house',
 
@@ -222,10 +222,12 @@ export const offers: Offer[] = [
     },
     description: 'Peaceful studio in the most wanted area in town. Quiet house Near of everything. Completely renovated. Lovely neighbourhood, lot of trendy shops, restaurants and bars in a walking distance.',
     location: {
-      latitude: 50.934361,
-      longitude: 6.943974,
+      latitude: 52.3809553943508,
+      longitude: 4.939309666406198,
       zoom: 16
     },
     id: 4
   }
 ];
+
+

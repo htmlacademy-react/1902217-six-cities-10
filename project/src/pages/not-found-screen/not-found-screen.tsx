@@ -1,4 +1,4 @@
-import { AppRoute } from '../../const';
+import { AppRoute } from '../../const/enums';
 import { Link } from 'react-router-dom';
 import Logo from '../../components/logo/logo';
 

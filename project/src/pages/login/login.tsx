@@ -1,5 +1,5 @@
 import Logo from '../../components/logo/logo';
-import { AppRoute } from '../../const';
+import { AppRoute } from '../../const/enums';
 
 export default function Login(): JSX.Element {
   return (

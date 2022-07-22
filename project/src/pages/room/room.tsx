@@ -1,6 +1,6 @@
 import Header from '../../components/header/header';
 import ReviewForm from '../../components/rewiew-form/review-form';
-import { AppRoute } from '../../const';
+import { AppRoute } from '../../const/enums';
 
 export default function Room(): JSX.Element {
   return (

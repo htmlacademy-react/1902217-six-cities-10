@@ -1,8 +1,8 @@
 import Header from '../../components/header/header';
 import FavoriteLocation from '../../components/favorite-location/favorite-location';
-import { AppRoute } from '../../const';
+import { AppRoute } from '../../const/enums';
 import { Offer } from '../../types/offer';
-import { CityType } from '../../const';
+import { CityType } from '../../const/enums';
 import { Link } from 'react-router-dom';
 
 type FavoritesScreenProps = {

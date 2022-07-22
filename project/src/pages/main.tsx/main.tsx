@@ -1,8 +1,11 @@
-import { PlaceCardClassName } from '../../const';
-import PlaceCardList from '../../components/place-card-list/place-card-list';
+import { PlaceCardClassName } from '../../const/enums';
+import PlacesCardList from '../../components/places-card-list/places-card-list';
 import Header from '../../components/header/header';
+import Map from '../../components/map/map';
+import { CityType } from '../../const/enums';
 import { Offer } from '../../types/offer';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 type MainScreenProps = {
   placeCount: number;
@@ -10,6 +13,16 @@ type MainScreenProps = {
 }
 
 export default function Main({ placeCount, offers }: MainScreenProps): JSX.Element {
+  const [activeCard, setActiveCard] = useState<Offer | undefined>(undefined);
+
+  const sortedByCityOffers = {
+    PARIS: offers.filter((card) => card.city.name === CityType.Paris),
+    COLOGNE: offers.filter((card) => card.city.name === CityType.Cologne),
+    BRUSSELS: offers.filter((card) => card.city.name === CityType.Brussels),
+    AMSTERDAM: offers.filter((card) => card.city.name === CityType.Amsterdam),
+    HAMBURG: offers.filter((card) => card.city.name === CityType.Hamburg),
+    DUSSELDORF: offers.filter((card) => card.city.name === CityType.Dusseldorf)
+  };
 
   return (
     <div className="page page--gray page--main">
@@ -74,11 +87,11 @@ export default function Main({ placeCount, offers }: MainScreenProps): JSX.Eleme
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <PlaceCardList offers={offers} placeCardClassName={PlaceCardClassName.Main} />
+                <PlacesCardList offers={offers} getActiveCard={setActiveCard} placeCardClassName={PlaceCardClassName.Main} />
               </div>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <section className="cities__map map"><Map offers={sortedByCityOffers.AMSTERDAM} activeCard={activeCard} /></section>
             </div>
           </div>
         </div>
