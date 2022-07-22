@@ -5,13 +5,26 @@ import { useState } from 'react';
 
 type PlaceCardScreenProps = {
   offer: Offer
-  getActiveCard: (offer: Offer) => void
+  getActiveCard: ((offer: Offer | undefined) => void) | undefined
   placeCardClassName: string
 }
 
 export default function PlaceCard({ offer, getActiveCard, placeCardClassName }: PlaceCardScreenProps): JSX.Element {
   const { id, title, isPremium, isFavorite, previewImage, price, type } = offer;
   const [buttonState, setButtonState] = useState(isFavorite);
+
+  const onMouseOverHandler = () => {
+    if (getActiveCard) {
+      return getActiveCard(offer);
+    }
+  };
+
+  const onMouseLeaveHandler = () => {
+    if (getActiveCard) {
+      return getActiveCard(undefined);
+    }
+  };
+
 
   const buttonClickHandle = () => {
     setButtonState((prevButtonState) => !prevButtonState);
@@ -21,7 +34,8 @@ export default function PlaceCard({ offer, getActiveCard, placeCardClassName }: 
     <article
       id={String(id)}
       className={`${placeCardClassName}__card place-card`}
-      onMouseOver={() => getActiveCard(offer)}
+      onMouseOver={onMouseOverHandler}
+      onMouseLeave={onMouseLeaveHandler}
     >
       {
         isPremium &&

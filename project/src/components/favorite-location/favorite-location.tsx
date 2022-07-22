@@ -20,7 +20,7 @@ export default function FavoriteLocation({ offers, city }: FavoriteLocationScree
         </div>
       </div>
       <div className="favorites__places">
-        {/* <PlacesCardList offers={offers} placeCardClassName={PlaceCardClassName.Favorite} /> */}
+        <PlacesCardList offers={offers} placeCardClassName={PlaceCardClassName.Favorite} />
       </div>
     </li>
   );

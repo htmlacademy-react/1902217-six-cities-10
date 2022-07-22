@@ -14,9 +14,6 @@ type MainScreenProps = {
 
 export default function Main({ placeCount, offers }: MainScreenProps): JSX.Element {
   const [activeCard, setActiveCard] = useState<Offer | undefined>(undefined);
-  const getActiveCard = (offer: Offer): void => {
-    setActiveCard(offer);
-  };
 
   const sortedByCityOffers = {
     PARIS: offers.filter((card) => card.city.name === CityType.Paris),
@@ -90,7 +87,7 @@ export default function Main({ placeCount, offers }: MainScreenProps): JSX.Eleme
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <PlacesCardList offers={offers} placeCardClassName={PlaceCardClassName.Main} getActiveCard={getActiveCard} />
+                <PlacesCardList offers={offers} getActiveCard={setActiveCard} placeCardClassName={PlaceCardClassName.Main} />
               </div>
             </section>
             <div className="cities__right-section">

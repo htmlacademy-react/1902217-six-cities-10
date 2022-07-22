@@ -4,7 +4,7 @@ import PlaceCard from '../place-card/place-card';
 type PlacesCardListProps = {
   offers: Offer[]
   placeCardClassName: string
-  getActiveCard: (offer: Offer) => void
+  getActiveCard?: ((offer: Offer | undefined) => void) | undefined
 }
 
 export default function PlacesCardList({ offers, placeCardClassName, getActiveCard }: PlacesCardListProps): JSX.Element {
