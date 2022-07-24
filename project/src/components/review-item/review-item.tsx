@@ -9,7 +9,7 @@ const reviewDateFormat = 'MMMM YYYY';
 
 export default function ReviewItem({ review }: ReviewItemProps): JSX.Element {
   const { user, comment, date, rating } = review;
-  const { name, avatarUrl, isPro, id } = user;
+  const { name, avatarUrl, id } = user;
 
   return (
     <li key={id} className="reviews__item">
